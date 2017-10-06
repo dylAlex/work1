@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	    var total=0;
+		var year1=parseInt(prompt("请输入您的出生年份"));
+		var month1=parseInt(prompt("请输入您的出生月份"));
+		var date1=parseInt(prompt("请输入您的出生日期"));
+		var arr=new Array(31,28,31,30,31,30,31,31,30,31,30,31);
+	function tianshu(){
+		// js里面的月是从0开始的，输入10月份代表第十一个月
+		for(var i=0;i<month1-1;i++){
+			total+=arr[i];
+		}
+		if(year1%400==0||(year1%4==0 && year1%100!=0)&&month1>2){
+			total=total+date1+1;
+		}else{
+			total=total+date1;
+		}
+		return total;
+    }
+    document.write("您的生日在"+year1+"年是第"+tianshu()+"天");
+	</script>
+</body>
+</html>
